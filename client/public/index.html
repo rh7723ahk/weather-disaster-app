@@ -1,10 +1,302 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-  </head>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Linked Files for Login -->
+  <link href="css/login_style.css" rel="stylesheet">
+  <link href="js/login_script.js" rel="script">
+
+  <!-- Title -->
+  <title>Weather App</title>
+
+  <!-- //Weather Widget -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/weather_widget_style.css">
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <a class="menu-toggle rounded" href="#">
+      <i class="fa fa-bars"></i>
+    </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">Weather App</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#page-top">Local</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#callout">Search</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#services">Map</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#portfolio">Message Board</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Landing Page(1) -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <!-- Login -->
+      <div class="container">
+        <div class="card card-container">
+          <img id="profile-img" class="profile-img-card" src="img/head.png" />
+          <p id="profile-name" class="profile-name-card"></p>
+          <form class="form-signin">
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div id="remember" class="checkbox">
+              <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+          </form>
+          <!-- /form -->
+          <a href="#" class="forgot-password">
+                Forgot password?
+            </a>
+        </div>
+        <!-- /card-container -->
+      </div>
+      <!-- /container -->
+      <h1 class="mb-1"></h1>
+      <h3 class="mb-5">
+          <em></em>
+        </h3>
+    </div>
+    <div class="overlay"></div>
+  </header>
+
+  <!-- Weather Widget Page (2) -->
+
   <body>
+    <div class="container" id="box-holder" style="background: rgb(0, 0, 0); color: rgb(0, 0, 0);">
+      <div class="content-box">
+        <h1>Local<img id="icon" alt="weather-icon"></img></h1>
+        <div class="content">
+          <div class="content-circles">
+            <p class="info" id="weather"></p>
+          </div>
+          <span class="title">Condition</span>
+        </div>
+
+        <div class="content">
+          <a href="#" id="hitbox">
+            <div class="content-circles" id="temperature">
+              <p class="info" id="temp"></p>
+              <div class="unit-switch">
+                <span class="unit"></span>
+              </div>
+            </div>
+          </a>
+          <span class="title">Temperature</span>
+        </div>
+
+        <div class="content">
+          <div class="content-circles">
+            <p class="info" id="location"></p>
+          </div>
+          <span class="title">Location</span>
+        </div>
+      </div>
+    </div>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+    <script src="js/index.js"></script>
   </body>
+
+
+  <!-- Search Bar Page (3) -->
+  <section class="callout">
+    <div class="container text-center">
+      <h1>Stay up to date on weather conditions, both locally and abroad.</h1>
+      <p class="lead mb-5">For extreme weather updates, click
+        <a href="https://www.wunderground.com/news/">here</a>.</p>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Advisory Type <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Hurricane Local Statement</a></li>
+                <li><a href="#">Tornado Warning</a></li>
+                <li><a href="#">Tornado Watch</a></li>
+                <li><a href="#">Sever Thunderstorm Warning</a></li>
+                <li><a href="#">Sever Thunderstorm Watch</a></li>
+                <li><a href="#">Winter Weather Advisory</a></li>
+                <li><a href="#">Flood Warning</a></li>
+                <li><a href="#">Flood Watch/Statement</a></li>
+                <li><a href="#">High Wind Advisory</a></li>
+                <li><a href="#">Sever Weather Statement</a></li>
+                <li><a href="#">Fire Weather Advisory</a></li>
+                <li><a href="#">Volcanic Activity Statement</a></li>
+                <li><a href="#">Hurrican Wind Warning</a></li>
+                <li><a href="#">Record Set</a></li>
+                <li><a href="#">Public Reports</a></li>
+                <li><a href="#">Public Information Statement</a></li>
+              </ul>
+            </div>
+            <!-- /btn-group -->
+            <input type="text" class="form-control" aria-label="...">
+          </div>
+          <!-- /input-group -->
+        </div>
+        <!-- /.col-lg-6 -->
+        <!-- //plain search bar -->
+        <div class="col-lg-6">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="">
+            <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Search</button>
+            </span>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Map Page (4). Jenna's google map search. -->
+  <section id="contact" class="map">
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+    <script>
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 30.307182, lng: -97.755996},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+          if (places.length == 0) {
+            return;
+          }
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBl2tJ4tlmD3a66sB_arSIFDaLIpXtxnUE&libraries=places&callback=initAutocomplete"
+         async defer></script>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+              <i class="icon-social-facebook"></i>
+            </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+              <i class="icon-social-twitter"></i>
+            </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#">
+              <i class="icon-social-github"></i>
+            </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; Disaster App 2017</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.min.js"></script>
+
+</body>
+
 </html>
