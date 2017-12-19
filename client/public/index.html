@@ -175,9 +175,9 @@
         <!-- //plain search bar -->
         <div class="col-lg-6">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="">
+            <input type="text" class="form-control" placeholder="city, state" id="city-input">
             <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Search</button>
+            <button class="btn btn-default" type="button" id="find-weather">Search</button>
             </span>
           </div>
         </div>
@@ -254,6 +254,42 @@
         });
       }
     </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+      <script type="text/javascript">
+    
+
+    $("#find-weather").on("click", function(event) {
+      event.preventDefault();
+      var location = $("#city-input").val().trim();
+
+      var citystate = location.split(',');
+      var city = citystate[0];
+      var state = citystate[1];
+      
+      console.log("On click functioning");
+      console.log(state);
+      console.log(city);
+
+      getWeather();
+    
+
+      function getWeather() {
+    
+        console.log("Get weather functioning");
+        var queryURL = "http://api.wunderground.com/api/3f793d9c699917ce/alerts/q/" + state + "/" + city + ".json";
+
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).done(function(response) {
+          console.log(response);
+        });
+
+      }
+    });
+
+  </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBl2tJ4tlmD3a66sB_arSIFDaLIpXtxnUE&libraries=places&callback=initAutocomplete"
          async defer></script>
   </section>
